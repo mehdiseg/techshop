@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finalisez votre commande sur TechShop - Paiement sécurisé et livraison rapide. Formulaire de paiement simple et sécurisé.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Paiement - TechShop | Finaliser Commande</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/html/index.html" class="logo">TECHSHOP</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Mode sombre">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark-icon">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="light-icon" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="#" class="cart-icon" id="cartIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="mobile-toggle">☰</div>
+            </div>
+            <nav class="main-nav">
+                <a href="/html/index.html">ACCUEIL</a>
+                <a href="/html/produits.html">PRODUITS</a>
+                <a href="/html/apropos.html">À PROPOS</a>
+                <a href="/html/contact.html">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Finaliser votre commande</h1>
+        
+        <div class="checkout-container">
+            <!-- Récapitulatif de la commande -->
+            <section class="checkout-summary">
+                <h2>Récapitulatif de votre commande</h2>
+                
+                <!-- Section Coupons -->
+                <div class="coupon-section">
+                    <strong>🎁 Code promo disponible ?</strong>
+                    <div class="coupon-input-group">
+                        <input type="text" id="couponCode" class="coupon-input" placeholder="Entrez votre code promo">
+                        <button class="coupon-btn" id="applyCoupon">Appliquer</button>
+                    </div>
+                    <div id="couponMessage" style="margin-top: 0.5rem; font-size: 0.9rem;"></div>
+                </div>
+                
+                <div id="orderSummary" class="order-summary">
+                    <!-- Le contenu sera généré par JavaScript -->
+                </div>
+                <div class="order-total">
+                    <div class="total-line">
+                        <span>Sous-total:</span>
+                        <span id="subtotal">0 €</span>
+                    </div>
+                    <div class="total-line">
+                        <span>Livraison:</span>
+                        <span id="shipping">Gratuite</span>
+                    </div>
+                    <div class="total-line total-final">
+                        <strong>Total:</strong>
+                        <strong id="totalPrice">0 €</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulaire de paiement -->
+            <section class="checkout-form-section">
+                <form id="checkoutForm" class="checkout-form">
+                    <h2>Informations de livraison</h2>
+                    
+                    <div class="form-group">
+                        <label for="deliveryName">Nom complet *</label>
+                        <input type="text" id="deliveryName" name="deliveryName" required>
+                        <span class="error-message" id="deliveryNameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryEmail">Email *</label>
+                        <input type="email" id="deliveryEmail" name="deliveryEmail" required>
+                        <span class="error-message" id="deliveryEmailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryPhone">Téléphone *</label>
+                        <input type="tel" id="deliveryPhone" name="deliveryPhone" required>
+                        <span class="error-message" id="deliveryPhoneError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="deliveryAddress">Adresse *</label>
+                        <input type="text" id="deliveryAddress" name="deliveryAddress" required>
+                        <span class="error-message" id="deliveryAddressError"></span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="deliveryCity">Ville *</label>
+                            <input type="text" id="deliveryCity" name="deliveryCity" required>
+                            <span class="error-message" id="deliveryCityError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deliveryPostal">Code postal *</label>
+                            <input type="text" id="deliveryPostal" name="deliveryPostal" required pattern="[0-9]{5}">
+                            <span class="error-message" id="deliveryPostalError"></span>
+                        </div>
+                    </div>
+
+                    <h2 style="margin-top: 2rem;">Informations de paiement</h2>
+                    
+                    <div class="form-group">
+                        <label for="cardName">Nom sur la carte *</label>
+                        <input type="text" id="cardName" name="cardName" required>
+                        <span class="error-message" id="cardNameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">Numéro de carte *</label>
+                        <input type="text" id="cardNumber" name="cardNumber" required pattern="[0-9\s]{13,19}" placeholder="1234 5678 9012 3456" maxlength="19">
+                        <span class="error-message" id="cardNumberError"></span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cardExpiry">Date d'expiration *</label>
+                            <input type="text" id="cardExpiry" name="cardExpiry" required pattern="[0-9]{2}/[0-9]{2}" placeholder="MM/AA" maxlength="5">
+                            <span class="error-message" id="cardExpiryError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardCVC">CVC *</label>
+                            <input type="text" id="cardCVC" name="cardCVC" required pattern="[0-9]{3,4}" placeholder="123" maxlength="4">
+                            <span class="error-message" id="cardCVCError"></span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-cta" style="width: 100%; margin-top: 1.5rem; font-size: 1.1rem; padding: 1rem;">
+                        Payer <span id="totalPriceButton">0 €</span>
+                    </button>
+                    <div id="checkoutMessage" class="form-message"></div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 TechShop. Tous droits réservés.</p>
+    </footer>
+    
+    <!-- Panneau Panier (Sidebar) -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h2>Mon Panier</h2>
+            <button class="cart-close" id="cartClose" aria-label="Fermer le panier">×</button>
+        </div>
+        <div class="cart-sidebar-content" id="cartContent">
+            <!-- Le contenu sera généré par JavaScript -->
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotal">0 €</span></strong>
+            </div>
+            <button class="btn-cta" id="cartCheckout" style="width: 100%; margin-top: 1rem;">Valider la commande</button>
+            <button class="cart-clear" id="cartClear">Vider le panier</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>
+

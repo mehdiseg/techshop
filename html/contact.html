@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez TechShop - Notre équipe est à votre disposition pour répondre à vos questions. Formulaire de contact et informations de localisation.">
+    <meta name="keywords" content="contact techshop, support client, service client, localisation">
+    <title>Contact - TechShop | Nous Contacter</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/html/index.html" class="logo">TECHSHOP</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Mode sombre">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark-icon">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="light-icon" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="#" class="cart-icon" id="cartIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="mobile-toggle">☰</div>
+            </div>
+            <nav class="main-nav">
+                <a href="/html/index.html">ACCUEIL</a>
+                <a href="/html/produits.html">PRODUITS</a>
+                <a href="/html/apropos.html">À PROPOS</a>
+                <a href="/html/contact.html" style="color: var(--primary);">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Contactez-nous</h1>
+        
+        <div class="contact-container">
+            <section class="contact-info">
+                <h2>Informations de contact</h2>
+                <div class="info-item">
+                    <strong>📧 Email :</strong>
+                    <p>contact@techshop.fr</p>
+                </div>
+                <div class="info-item">
+                    <strong>📞 Téléphone :</strong>
+                    <p>+33 1 23 45 67 89</p>
+                </div>
+                <div class="info-item">
+                    <strong>📍 Adresse :</strong>
+                    <p>123 Rue de la Technologie<br>75001 Paris, France</p>
+                </div>
+                <div class="info-item">
+                    <strong>🕒 Horaires :</strong>
+                    <p>Lundi - Vendredi : 9h - 18h<br>Samedi : 10h - 16h</p>
+                </div>
+            </section>
+
+            <section class="contact-form-section">
+                <h2>Envoyez-nous un message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet *</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone">
+                        <span class="error-message" id="phoneError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Sujet *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Sélectionnez un sujet</option>
+                            <option value="question">Question produit</option>
+                            <option value="commande">Suivi de commande</option>
+                            <option value="retour">Retour produit</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn-cta" style="width: 100%;">Envoyer le message</button>
+                    <div id="contactMessage" class="form-message"></div>
+                </form>
+            </section>
+        </div>
+
+        <!-- Section Carte Google Maps -->
+        <section class="map-section">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Notre localisation</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.6270600753634!2d2.3412!3d48.8606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2s1er%20Arrondissement%2C%2075001%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Localisation TechShop - 123 Rue de la Technologie, 75001 Paris">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 TechShop. Tous droits réservés.</p>
+    </footer>
+    
+    <!-- Panneau Panier (Sidebar) -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h2>Mon Panier</h2>
+            <button class="cart-close" id="cartClose" aria-label="Fermer le panier">×</button>
+        </div>
+        <div class="cart-sidebar-content" id="cartContent">
+            <!-- Le contenu sera généré par JavaScript -->
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotal">0 €</span></strong>
+            </div>
+            <button class="btn-cta" id="cartCheckout" style="width: 100%; margin-top: 1rem;">Valider la commande</button>
+            <button class="cart-clear" id="cartClear">Vider le panier</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>
+

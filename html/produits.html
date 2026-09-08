@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez notre catalogue de produits high-tech : smartphones, ordinateurs, et accessoires audio. Prix compétitifs et livraison rapide.">
+    <meta name="keywords" content="produits high-tech, smartphones, ordinateurs, audio, catalogue, techshop">
+    <title>Nos Produits - TechShop | Catalogue High-Tech</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="/html/index.html" class="logo">TECHSHOP</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Mode sombre">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark-icon">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="light-icon" style="display: none;">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="#" class="cart-icon" id="cartIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="mobile-toggle">☰</div>
+            </div>
+            <nav class="main-nav">
+                <a href="/html/index.html">ACCUEIL</a>
+                <a href="/html/produits.html" style="color: var(--primary);">PRODUITS</a>
+                <a href="/html/apropos.html">À PROPOS</a>
+                <a href="/html/contact.html">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 style="text-align: center; margin-bottom: 2rem;">Notre Catalogue</h1>
+        
+        <!-- Barre de recherche -->
+        <div class="search-section">
+            <input type="text" id="productSearch" class="search-input" placeholder="🔍 Rechercher un produit...">
+        </div>
+        
+        <!-- Tri des produits -->
+        <div class="sort-section">
+            <label for="sortProducts" class="sort-label">Trier par :</label>
+            <select id="sortProducts" class="sort-select">
+                <option value="default">Par défaut</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+                <option value="name-asc">Nom (A-Z)</option>
+                <option value="name-desc">Nom (Z-A)</option>
+            </select>
+        </div>
+        
+        <div class="filter-section">
+            <button class="filter-btn active" data-category="all">Tous</button>
+            <button class="filter-btn" data-category="ordinateurs">Ordinateurs</button>
+            <button class="filter-btn" data-category="smartphones">Smartphones</button>
+            <button class="filter-btn" data-category="audio">Audio</button>
+        </div>
+
+        <div class="grid-responsive" id="productsGrid">
+            <article class="card" data-category="smartphones">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=500&fit=crop" alt="Smartphone Pro">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>Smartphone Pro</h3>
+                        <button class="wishlist-btn" data-product-id="1" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">999 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 1, "name": "Smartphone Pro", "price": 999, "category": "smartphones"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="1" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="ordinateurs">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=500&fit=crop" alt="Laptop Ultra">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>Laptop Ultra</h3>
+                        <button class="wishlist-btn" data-product-id="2" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">1499 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 2, "name": "Laptop Ultra", "price": 1499, "category": "ordinateurs"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="2" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="audio">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&h=500&fit=crop" alt="Casque Audio">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>Casque Audio</h3>
+                        <button class="wishlist-btn" data-product-id="3" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">299 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 3, "name": "Casque Audio", "price": 299, "category": "audio"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="3" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="smartphones">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500&h=500&fit=crop" alt="Smartphone Mini">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>Smartphone Mini</h3>
+                        <button class="wishlist-btn" data-product-id="4" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">599 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 4, "name": "Smartphone Mini", "price": 599, "category": "smartphones"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="4" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="ordinateurs">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=500&h=500&fit=crop" alt="PC Gamer">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>PC Gamer</h3>
+                        <button class="wishlist-btn" data-product-id="5" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">1999 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 5, "name": "PC Gamer", "price": 1999, "category": "ordinateurs"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="5" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="audio">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500&h=500&fit=crop" alt="Écouteurs Bluetooth">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>Écouteurs Bluetooth</h3>
+                        <button class="wishlist-btn" data-product-id="6" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">149 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 6, "name": "Écouteurs Bluetooth", "price": 149, "category": "audio"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="6" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="smartphones">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=500&h=500&fit=crop" alt="Smartphone Max">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>Smartphone Max</h3>
+                        <button class="wishlist-btn" data-product-id="7" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">1299 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 7, "name": "Smartphone Max", "price": 1299, "category": "smartphones"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="7" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="ordinateurs">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500&h=500&fit=crop" alt="MacBook Pro">
+                </div>
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3>MacBook Pro</h3>
+                        <button class="wishlist-btn" data-product-id="8" aria-label="Ajouter aux favoris">🤍</button>
+                    </div>
+                    <div class="rating" data-rating="0">
+                        <span class="star" data-value="1">⭐</span>
+                        <span class="star" data-value="2">⭐</span>
+                        <span class="star" data-value="3">⭐</span>
+                        <span class="star" data-value="4">⭐</span>
+                        <span class="star" data-value="5">⭐</span>
+                    </div>
+                    <p class="price">2499 €</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="btn-cta" style="flex: 1" data-product='{"id": 8, "name": "MacBook Pro", "price": 2499, "category": "ordinateurs"}'>Ajouter</button>
+                        <button class="compare-btn" data-product-id="8" style="padding: 0.8rem; border: 2px solid var(--primary); background: transparent; border-radius: var(--radius); cursor: pointer;" title="Comparer">⚖️</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 TechShop. Tous droits réservés.</p>
+    </footer>
+    
+    <!-- Panneau Panier (Sidebar) -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h2>Mon Panier</h2>
+            <button class="cart-close" id="cartClose" aria-label="Fermer le panier">×</button>
+        </div>
+        <div class="cart-sidebar-content" id="cartContent">
+            <!-- Le contenu sera généré par JavaScript -->
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotal">0 €</span></strong>
+            </div>
+            <button class="btn-cta" id="cartCheckout" style="width: 100%; margin-top: 1rem;">Valider la commande</button>
+            <button class="cart-clear" id="cartClear">Vider le panier</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Bouton retour en haut -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>
+
